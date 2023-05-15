@@ -1,0 +1,23 @@
+// бургер меню
+let burger = document.querySelector('.burger');
+let menu = document.querySelector('.header__nav');
+let menuLinks = menu.querySelectorAll('.nav__link');
+
+burger.addEventListener('click',
+  function () {
+    burger.classList.toggle('burger_open');
+
+    menu.classList.toggle('header__nav_open');
+
+    document.body.classList.toggle('stop-scroll');
+  })
+
+menuLinks.forEach(function (el) {
+  el.addEventListener('click', function () {
+    burger.classList.remove('burger_open');
+
+    menu.classList.remove('header__nav_open');
+
+    document.body.classList.remove('stop-scroll');
+  })
+})
